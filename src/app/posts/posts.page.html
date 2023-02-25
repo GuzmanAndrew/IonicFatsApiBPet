@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Publications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col size="12" sizeMd="3" *ngFor="let post of posts">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Fecha: {{post.email}}</ion-card-subtitle>
+          <ion-card-title>Hora: {{post.password}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div>
+            Valor Clínico: {{post.name}}
+          </div>
+          <ion-button color="secondary" [routerLink]="['/', 'posts', 'edit', post.id]">
+            Update
+          </ion-button>
+          <ion-button color="danger" (click)="removePost(post.id)">
+            Remove
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <!-- fab placed to the bottom end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/post-form">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
