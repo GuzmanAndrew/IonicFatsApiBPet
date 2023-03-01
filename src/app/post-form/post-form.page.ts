@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class PostFormPage implements OnInit {
   post: Post = {
+    id : "",
     name: "",
     email: "",
     password: "",
@@ -46,11 +47,7 @@ export class PostFormPage implements OnInit {
 
   updatePost() {
     this.postService
-      .updatePost(this.post.id, {
-        name: this.post.name,
-        email: this.post.email,
-        password: this.post.password
-      })
+      .updatePost(this.post.id, this.post)
       .subscribe((res) => {
         console.log(res);
         this.editing = false;

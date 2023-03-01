@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment";
 
 export interface Post {
-  id?: string;
+  id: string;
   name: string;
   email: string;
   password: string;
@@ -16,14 +16,14 @@ export interface Post {
 export class PostService {
   constructor(private http: HttpClient) {}
 
-  API = `${environment.API}/posts`;
+  API = `${environment.API}`;
 
   getPosts() {
     return this.http.get<Post[]>(`${this.API}/users`);
   }
 
   createPost(name: string, email: string, password: string) {
-    return this.http.post<Post[]>(`${this.API}/`, {
+    return this.http.post<Post[]>(`${this.API}`, {
       name,
       email,
       password
