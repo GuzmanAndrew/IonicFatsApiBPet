@@ -16,9 +16,6 @@
         <ion-card-content>
           <ion-card-title>Valor Clínico: {{post.password}}</ion-card-title>
           <br>
-          <ion-button color="secondary" [routerLink]="['/', 'posts', 'edit', post.id]">
-            Update
-          </ion-button>
           <ion-button color="danger" (click)="removePost(post.id)">
             Remove
           </ion-button>
