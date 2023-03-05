@@ -16,14 +16,14 @@ export interface Post {
 export class PostService {
   constructor(private http: HttpClient) {}
 
-  API = `${environment.API}`;
+  API = "http://167.172.170.87";
 
   getPosts() {
     return this.http.get<Post[]>(`${this.API}/users`);
   }
 
   createPost(name: string, email: string, password: string) {
-    return this.http.post<Post[]>(`${this.API}`, {
+    return this.http.post<Post[]>(`${this.API}/new`, {
       name,
       email,
       password

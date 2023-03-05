@@ -11,7 +11,7 @@ import { environment } from "../../environments/environment";
 export class PostsPage implements OnInit {
   posts: Post[] = [];
 
-  API = environment.API;
+  API = "http://167.172.170.87";
 
   constructor(
     private postService: PostService,
