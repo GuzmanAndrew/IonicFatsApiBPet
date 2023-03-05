@@ -37,13 +37,13 @@ export class PostsPage implements OnInit {
 
   async removePost(id: string) {
     const alert = await this.alertController.create({
-      header: "Alert",
-      subHeader: "Subtitle",
-      message: "This is an alert message.",
+      header: "¡Alerta!",
+      subHeader: "Borrar Tarjeta",
+      message: "¿Esta seguro de eliminar la tarjeta?.",
       buttons: [
-        "Cancel",
+        "No",
         {
-          text: "Okay",
+          text: "Si",
           handler: () => {
             this.postService.removePost(id).subscribe(
               (res) => {

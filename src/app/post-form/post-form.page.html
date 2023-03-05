@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="posts"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{ editing ? 'Update': 'Create'}} a New Post</ion-title>
+    <ion-title>{{ editing ? 'Actualizar': 'Crear'}} registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,12 +12,6 @@
   <ion-row>
     <ion-col size-md="6" offset-md="3">
       <ion-card class="ion-padding">
-        <ion-card-header>
-          {{editing? 
-          'Update Yout Post':
-          'Write your Post'
-          }}
-        </ion-card-header>
         <ion-card-content>
           <ion-item>
             <ion-label position="floating">Fecha</ion-label>
@@ -32,7 +26,7 @@
             <ion-textarea [(ngModel)]="post.password" rows="7"></ion-textarea>
           </ion-item>
           <ion-button expand="full" (click)="editing? updatePost(): savePost()" class="ion-margin-top">
-            {{editing ? 'Update': 'Save'}}
+            {{editing ? 'Actualizar': 'Guardar'}}
           </ion-button>
         </ion-card-content>
 

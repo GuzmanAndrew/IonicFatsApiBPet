@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Usuario:</ion-label>
+          <ion-input [(ngModel)]="post.user"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Contraseña:</ion-label>
+          <ion-input [(ngModel)]="post.password" type="password" value="password"></ion-input>
+        </ion-item>
+      </ion-list>
+      <br>
+      <ion-button expand="full" color="primary" (click)="login()">
+        Ingresar
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

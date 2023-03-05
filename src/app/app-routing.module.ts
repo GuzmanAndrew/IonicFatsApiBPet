@@ -8,8 +8,12 @@ const routes: Routes = [
       import("./home/home.module").then((m) => m.HomePageModule),
   },
   {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
     path: "",
-    redirectTo: "posts",
+    redirectTo: "login",
     pathMatch: "full",
   },
   {
@@ -26,7 +30,7 @@ const routes: Routes = [
     path: "posts/edit/:postId",
     loadChildren: () =>
       import("./post-form/post-form.module").then((m) => m.PostFormPageModule),
-  },
+  }
 ];
 
 @NgModule({
